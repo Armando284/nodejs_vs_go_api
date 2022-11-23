@@ -12,6 +12,14 @@ import (
 
 var NweProduct models.Product
 
+func SetHeaders(w *http.ResponseWriter) {
+	(*w).Header().Set("Content-Type", "pkglication/json")
+}
+
+func EnableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+}
+
 func GetProductsWithTaxes(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	tax := vars["tax"]
@@ -24,7 +32,8 @@ func GetProductsWithTaxes(w http.ResponseWriter, r *http.Request) {
 		products[i].Price *= Tax
 	}
 	res, _ := json.Marshal(products)
-	w.Header().Set("Content-Type", "pkglication/json")
+	SetHeaders(&w)
+	EnableCors(&w)
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
