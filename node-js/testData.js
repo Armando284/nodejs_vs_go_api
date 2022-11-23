@@ -241,6 +241,4 @@ const testData = [
   }
 ];
 
-module.exports = {
-  testData: testData,
-}
+module.exports = testData;
