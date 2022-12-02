@@ -6,20 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
-    <script src="./main.js" type="module" defer></script>
+    <script src="./bundle.js" defer></script>
   </head>
   <body>
     <h1>Test product api</h1>
+    <span
+      >The test will run 1000 sequential calls to each api and 1000 concurrent
+      calls to each api, then return the average time of each test, and make a
+      graph with the times of each request.</span
+    >
     <div class="container">
       <div class="test-box node">
         <button id="node-test-button">Test Node API</button>
-        <span>Result: <span class="result" id="node-result"></span></span>
+        <span class="result-container">
+          CREATE result:
+          <span class="result" id="node-create-result"></span>
+        </span>
+        <span class="result-container">
+          READ result:
+          <span class="result" id="node-read-result"></span>
+        </span>
+        <span class="result-container">
+          DELETE result:
+          <span class="result" id="node-delete-result"></span>
+        </span>
+        <span class="result-container">
+          FIBONACCI result:
+          <span class="result" id="node-fibonacci-result"></span>
+        </span>
       </div>
       <div class="test-box golang">
         <button id="go-test-button">Test Golang API</button>
-        <span>Result: <span class="result" id="go-result"></span></span>
+        <span class="result-container">
+          CREATE result:
+          <span class="result" id="go-create-result"></span>
+        </span>
+        <span class="result-container">
+          READ result:
+          <span class="result" id="go-read-result"></span>
+        </span>
+        <span class="result-container">
+          DELETE result:
+          <span class="result" id="go-delete-result"></span>
+        </span>
+        <span class="result-container">
+          FIBONACCI result:
+          <span class="result" id="go-fibonacci-result"></span>
+        </span>
       </div>
     </div>
+    <canvas id="create-chart"></canvas>
+    <canvas id="read-chart"></canvas>
+    <canvas id="delete-chart"></canvas>
+    <canvas id="fibonacci-chart"></canvas>
   </body>
 </html>

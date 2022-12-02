@@ -9,10 +9,10 @@ body {
   flex-direction: column;
   min-height: 100vh;
   color: #333;
+  padding: 40px;
 }
 
 h1 {
-  margin: 40px 0 40px 0;
   font-size: 3rem;
 }
 
@@ -21,22 +21,23 @@ h1 {
   align-items: center;
   width: 100%;
   max-width: 100vw;
+  margin-top: 40px;
 }
 
 .test-box {
   flex: 1;
-  height: 100px;
-  margin: 0 40px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   border-radius: 3px;
+  padding: 10px;
 }
 
 .node {
-  background: rgba(89, 215, 129, 0.5);
+  background: rgb(255, 193, 123);
 }
 .golang {
-  background: rgba(89, 179, 215, 0.5);
+  background: rgb(124, 192, 255);
 }
 
 button {
@@ -48,12 +49,13 @@ button {
   margin-bottom: 20px;
 }
 
-span {
+.result-container {
   font-size: 1.4rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
-span.result {
+.result {
   font-style: italic;
   font-weight: lighter;
 }
