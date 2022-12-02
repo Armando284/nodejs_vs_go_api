@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const api = require('./routes/routes');
+const productModel = require('./models/models');
 
 const PORT = process.env.PORT || 3000;
 
@@ -15,3 +16,7 @@ app.listen(PORT, () => {
 });
 
 app.use('/', api);
+
+productModel.TestBD().then(data => {
+  console.log(data)
+})
